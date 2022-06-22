@@ -1,0 +1,630 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url(./img/wiese.png);
+  /* background: url(./img/arena_battlefield.png); */
+  background-position: center top;
+  background-color: lightblue;
+  font-family:sans-serif
+}
+
+/* body::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+} */
+
+
+.wrapper{
+  position: relative;
+  max-width: 1690px;
+  margin: 0 auto;
+  height: 870px;
+}
+
+.team-builder {
+  position: absolute;
+  top: 450px;
+  /* left: 50%; */
+  transform: translatey(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  background: url(./img/feld.png);
+  background-size: 1496px;
+  background-position: bottom;
+  padding-bottom: 55px;
+  background-repeat: no-repeat;
+  
+}
+
+
+
+.selection {
+  position: absolute;
+  top: 520px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+
+  background: url(./img/feld.png);
+  background-size: 1496px;
+  background-position: bottom;
+  padding-bottom: 55px;
+  background-repeat: no-repeat;
+  
+}
+
+
+
+
+.field {
+  background: url(./img/grass.png);
+  position: relative;
+  float: left;
+  width: 140px;
+  height: 35px;
+  margin: 10px;
+  padding: 0;
+  padding-top: 82px;
+  /* border: 1px solid black; */
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 90px;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+.field img {
+  /* transform: translateY(-60%) scaleX(-1); */
+  transform: translateY(-71%);
+  margin: 0 auto;
+}
+
+
+
+.atk, .hp{
+  position: absolute;
+  text-align: center;
+  right: 5px;
+  bottom: -25px;
+  height: 20px;
+  width: 40px;
+  background-color: rgb(184, 184, 184);
+}
+
+.hp{
+  left: 5px;
+  bottom: -25px;
+  background-color: rgb(248, 109, 109);
+  /* clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+  transform: scale(1.3);
+  width: 25px;
+  height: 25px; */
+}
+
+.lv{
+  position: absolute;
+  text-align: center;
+  bottom: 116px;
+  right: 50%;
+  transform: translatex(50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 30px;
+  width: 100px;
+  display: flex;
+  border-radius: 50px;
+}
+
+.fire{
+  background-color: crimson;
+  color: #fff;
+}
+.water{
+  background-color: rgb(20, 163, 220);
+  color: #fff;
+}
+.grass{
+  background-color: rgb(16, 209, 32);
+  color: #fff;
+}
+ 
+.field .lv .pokeball_lv{
+  width: 25px;
+  height: 25px;
+  transform: translateY(6%);
+}
+
+.field .lv .pokeball_lv:nth-last-child(1), .field .lv .pokeball_lv:nth-last-child(2){
+ opacity: 0.5;
+}
+
+
+.selection .lv, .field .hide{
+  opacity: 0;
+}
+
+
+.show-atk{
+  position: absolute;
+  bottom: 70px;
+  right: -10%;
+  font-size: 28px;
+  font-weight: 700;
+  color: red;
+  transition: transform 0.2s ease-in-out ;
+}
+
+.enemy .show-atk{
+  bottom: 70px;
+  left: -10%;
+}
+
+.team-builder .show-atk-animation{
+  transform: translate(-35px, -25px);
+}
+
+.enemy .show-atk-animation{
+  transform: translate(35px, -25px);
+}
+
+.enemy .lv{
+  visibility: hidden;
+}
+
+.pokemon-information-container{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  border: 2px #000 solid;
+  display: flex;
+  border-radius: 75px 0 0 75px;
+  background-color: #000000;
+}
+
+.btn-roll{
+  height: 100%;
+  width: 200px;
+  background-color: #d30c23;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.pokemon-info-stats{
+  height: 100%;
+  width: 350px;
+  background-color: rgb(159, 211, 241);
+  display: flex;
+}
+
+.pokemon-info-stats .pokemon-img, .pokemon-info-stats .pokemon-info-text-container{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.pokemon-info-stats .pokemon-img{
+  overflow: hidden;
+}
+
+.pokemon-info-stats .pokemon-img img{
+  scale: 1.4;
+  transform: translatey(-13px) translateX(-30px);
+  
+}
+
+.pokemon-info-stats .pokemon-img .slide_animation{
+  transition: transform 0.25s ease-in-out;
+  transform: translatey(-13px) translateX(-10px);
+}
+
+.pokemon-info-bank{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+}
+
+.sell-hero{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  visibility: hidden;
+}
+
+.sell-hero-visible{
+  visibility: visible;
+}
+
+.currency-field{
+  position: absolute;
+  top: 10%;
+  transform: translatey(-10%);
+  left: 0;
+  font-size: 30px;
+}
+
+.currency-field div{
+  display: inline;
+  margin-right: 20px;
+}
+
+.btn-fight{
+  position: absolute;
+  bottom: calc(20% + 10px);
+  transform: translatey(-20%);
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*ENEMY*/
+.enemy {
+  position: absolute;
+  top: 550px;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  transform: translateY(-50%);
+  padding-bottom: 55px;
+}
+
+.enemy img{
+  transform: translateY(-71%) scaleX(-1);
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+/*----------------------------------
+FIGHT MODUS 
+----------------------------------*/
+
+.change-arena{
+  background: url(./img/arena_battlefield.png);
+  background-position: center top;
+  background-color: lightblue;
+}
+
+.fight-modus{
+  background: url(./img/pokeball_battlefield.png);
+  background-position: center bottom 230px;
+  background-repeat: no-repeat;
+  background-size: 450px;
+}
+
+.fight-modus .team-builder{
+  position: absolute;
+  top: 550px;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: inherit;
+
+  background: none;
+}
+
+.fight-modus .field{
+  width: 110px;
+  background: none;
+  margin: 0;
+}
+
+.fight-modus .field:last-child{
+  width: 200px;
+  margin-left: 60px;
+}
+
+.fight-modus .enemy .field:last-child{
+  margin-right: 60px;
+}
+
+/*----------------------------------
+STATS
+----------------------------------*/
+
+.pokemon-stats{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  display: flex;
+  gap: 400px;
+}
+
+.team-stats, .enemy-stats{
+  background-color: rgb(248, 221, 198);
+  border: 4px rgb(87, 82, 82) solid;
+  border-radius: 22px 10px;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.stats-flex{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+
+
+.balken-wrapper{
+  display: inline-block;
+  position: relative;
+  width: 225px;
+  height: 20px;
+  margin-left: 10px;
+  background-color: rgb(54, 52, 52);
+  font-size: 16px;
+  color: orange;
+  margin-top: 8px;
+  border: 3px rgb(54, 52, 52) solid;
+}
+
+.stats-hp_balken{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 0;
+  background-color: rgb(125, 223, 86);
+  z-index: 2;
+  transition: width 0.25s ease-in-out;
+}
+
+.balken-wrapper::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 100%;
+  background-color: rgb(223, 95, 86);
+  z-index: 1;
+}
+
+
+.stats-atk{
+  margin-right: 70px;
+}
+
+/*----------------------------------
+VORTEIL ZEIGER
+----------------------------------*/
+.vorteil_zeiger{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  top: 220px;
+}
+
+.vorteil_zeiger div{
+  height: 20px;
+  width: 150px;
+  background-color: #fff;
+  border-radius: 30px;
+  transform: rotate(180deg);
+  transition: transform 0.1s ease-in-out;
+}
+
+.vorteil_zeiger div:first-child{
+ margin-bottom: 30px;
+}
+
+/* .vorteil_zeiger div:last-child{
+  background-color: #fff;
+} */
+
+/* Team Vorteil */
+.vorteil_team div:first-child{
+  transform: rotate(158deg);
+ }
+ 
+ .vorteil_team div:last-child{
+  transform: rotate(203deg);
+ }
+/* ENEMY Vorteil */
+.vorteil_enemy div:first-child{
+  transform: rotate(197deg);
+  z-index: 2;
+  position: relative;
+ }
+ 
+ .vorteil_enemy div:last-child{
+  transform: rotate(154deg);
+ }
+
+
+/*----------------------------------
+FIGHT ANIMATION
+----------------------------------*/
+
+.team-builder .attack-animation img{
+  animation: attack_team 0.5s;
+}
+
+@keyframes attack_team {
+  0%{
+    transform: translateY(-71%) translatex(0);
+  }
+  20%{
+    transform: translateY(-71%) translatex(110px);
+  }
+  50%{
+    transform: translateY(-71%) translatex(110px);
+  }
+  80%{
+    transform: translateY(-71%) translatex(0);
+  }
+}
+
+.team-builder .attack-animation-lose img{
+  animation: attack_team_lose 0.55s;
+}
+
+@keyframes attack_team_lose {
+  0%{
+    transform: translateY(-71%) translatex(0) ;
+  }
+  20%{
+    transform: translateY(-71%) translatex(110px);
+  }
+  50%{
+    transform: translateY(-71%) translatex(110px);
+  }
+  70%{
+    /* transform: translateY(-123%) rotate(-26deg) translateX(-70px); */
+    transform: translateY(-253%) rotate(-35deg) translateX(-270px);
+    
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    /* transform: translateY(-123%) rotate(-26deg) translateX(-70px); */
+    transform: translateY(-253%) rotate(-35deg) translateX(-270px);
+    opacity: 0;
+  }
+}
+
+.enemy .attack-animation img{
+  animation: attack_enemy 0.5s;
+}
+
+@keyframes attack_enemy {
+  0%{
+    transform: translateY(-71%) translatex(0) scaleX(-1);
+  }
+  20%{
+    transform: translateY(-71%) translatex(-110px) scaleX(-1);
+  }
+  50%{
+    transform: translateY(-71%) translatex(-110px) scaleX(-1);
+  }
+  80%{
+    transform: translateY(-71%) translatex(0) scaleX(-1);
+  }
+}
+
+
+.enemy .attack-animation-lose img{
+  animation: attack_enemy_lose 0.55s;
+}
+
+@keyframes attack_enemy_lose {
+  0%{
+    transform: translateY(-71%) translatex(0) scaleX(-1);
+  }
+  20%{
+    transform: translateY(-71%) translatex(-110px) scaleX(-1);
+  }
+  50%{
+    transform: translateY(-71%) translatex(-110px) scaleX(-1);
+  }
+  70%{
+    /* transform: translateY(-123%) rotate(26deg) translateX(70px) scaleX(-1); */
+    transform: translateY(-253%) rotate(35deg) translateX(270px) scaleX(-1);
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    /* transform: translateY(-123%) rotate(26deg) translateX(70px) scaleX(-1); */
+    transform: translateY(-253%) rotate(35deg) translateX(270px) scaleX(-1);
+    opacity: 0;
+  }
+}
+
+
+
+
+/* Transition Animation */
+
+.transition-animation{
+  transition: all 0.5s ease-in-out;
+}
+
+.transition-animation::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #d30c23;
+  top: -100%;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.transition-animation::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  bottom: -100%;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.transition-animation_on::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #d30c23;
+  top: -50%;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.transition-animation_on::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  bottom: -50%;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+

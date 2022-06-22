@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+   
+      <div class="wrapper">
+        <section class="team-builder">
+          <div data-position = 0 class="field"></div>
+          <div data-position = 1 class="field"></div>
+          <div data-position = 2 class="field"></div>
+          <div data-position = 3 class="field"></div>
+          <div data-position = 4 class="field"></div>
+          <div data-position = 5 class="field"></div>
+        </section>
+
+        <section class="selection">
+          <!-- <div class="field"><img class="zenitsu" data-level="1" draggable="true" src="./img/zenitsu.gif"></div>
+        <div class="field"><img class="nezuko" data-level="1" draggable="true" src="./img/nezuko.png"></div>
+        <div class="field"><img class="nezuko" data-level="1" draggable="true" src="./img/nezuko.png"></div>
+        <div class="field"><img class="zenitsu" data-level="1" draggable="true" src="./img/zenitsu.gif"></div>
+        <div class="field"><img class="zenitsu" data-level="1" draggable="true" src="./img/zenitsu.gif"></div>
+        <div class="field"><img class="bakugou" data-level="1" draggable="true" src="./img/bakugou.gif"></div> -->
+        </section>
+
+        <section class="pokemon-information-container">
+          <div class="btn-roll">Reroll</div>
+          <div class="pokemon-info-stats">
+              <div class="pokemon-img">
+                <img src="#" alt="">
+              </div>
+              <div class="pokemon-info-text-container">
+                <div><span class="pokemon-info-text">Name</span></div>
+                <div><span>LV:</span><span class="pokemon-info-text"></span></div>
+                <div><span>HP:</span><span class="pokemon-info-text"></span></div>
+                <div><span>ATK:</span><span class="pokemon-info-text"></span></div>
+              </div>
+          </div>
+          <div class="pokemon-info-bank">
+          </div>
+          
+
+       </section>
+
+      <div class="sell-hero">
+        <span>Freilassen</span>
+      </div>
+
+        
+
+        <div class="currency-field">
+        <div><span class="gold"></span><span> Pokédollar</span></div>
+        <div><span class="pokeball"></span><span> Pokéball</span></div>
+        </div>
+      
+
+        <div class="btn-fight">Arena</div>
+
+        <section class="enemy hidden">
+        </section>
+
+        <div class="pokemon-stats hidden">
+          <div class="team-stats">
+            <div class="stats-flex"><span class="stats-name">Name</span><span><span>Lv:</span><span class="stats-lv">20</span></span></div>
+            <div class="balken-wrapper"><div class="stats-hp_balken"></div></div>
+            <div class="stats-flex"><span><span class="hp-stats">Hp:</span><span class="stats-hp">20</span><span>/</span><span class="stats-hp-full">20</span></span> <span><span>Atk:</span><span class="stats-atk">10</span></span></div>
+          </div>
+          <div class="enemy-stats">
+            <div class="stats-flex"><span class="stats-name">Name</span><span><span>Lv:</span><span class="stats-lv">20</span></span></div>
+            <div class="balken-wrapper"><div class="stats-hp_balken"></div></div>
+            <div class="stats-flex"><span><span class="hp-stats">Hp:</span><span class="stats-hp">20</span><span>/</span><span class="stats-hp-full">20</span></span> <span><span>Atk:</span><span class="stats-atk">10</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vorteil_zeiger hidden">
+          <div></div>
+          <div></div>
+      </div>
+
+      <div class="transition-animation"></div>
+   
+
+    <script src="./count_up.js"></script>
+    <script src="./pokemons.js"></script>
+    <script src="./building.js"></script>
+    <script src="./fight.js"></script>
+  </body>
+</html>
